@@ -8,13 +8,13 @@ export const createGlobalStyles = () => {
   return StyleSheet.create({
     // Container styles
     container: {
-      flex: 1,
-      padding: SPACING.lg,
+      flex: 1, 
       backgroundColor: colors.background,
     },
     scrollContainer: {
-      flexGrow: 1,
-      padding: SPACING.lg,
+      flexGrow: 1,  
+      paddingVertical: SPACING.xl,
+      paddingHorizontal: SPACING.md,
       backgroundColor: colors.background,
     },
     centerContainer: {
