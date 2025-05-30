@@ -3,6 +3,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { useTheme } from '../context/ThemeContext';
 import { PlatformPressable } from '@react-navigation/elements';
+
+
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingsScreen from '../screens/SettingsScreen';
@@ -13,7 +15,6 @@ import ProfileIcon from '../assets/images/settings.png';
 import OffersIcon from '../assets/images/settings.png';
 import SettingsIcon from '../assets/images/settings.png';
 import { Image } from 'react-native';
-import { FeImage } from 'react-native-svg';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,8 +38,7 @@ const BottomTabNavigator = () => {
             } else if (route.name === 'Settings') {
               icon = SettingsIcon;
             }
-            return <Image source={icon} width={size} height={size} l̥={color} />;
-
+            return <Image source={icon} width={size} height={size} tintColor={color} />;
           },
           headerShown: false,
           tabBarButton: (props) => <PlatformPressable {...props} android_ripple={{ color: 'transparent' }} />,
