@@ -69,6 +69,7 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
     primaryLight: isDarkMode ? '#0A84FF' : '#47A3FF',
     primaryDark: isDarkMode ? '#0055B3' : '#0055B3',
     
+    
     // Secondary colors
     secondary: '#5856D6',
     secondaryLight: isDarkMode ? '#7A79E0' : '#7A79E0',
