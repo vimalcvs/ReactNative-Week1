@@ -3,16 +3,24 @@ import {
   View,
   Text,
   ScrollView,
-
-
   StyleSheet,
   TouchableOpacity,
-
   Image
 } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
 
+import { Ionicons } from '@expo/vector-icons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+const iconColors: Record<string, string> = {
+  'sparkles': '#6C63FF', // purple
+  'mic': '#A259FF', // violet
+  'settings': '#4CD964', // green
+  'target': '#4B7BEC', // blue
+  'help-circle': '#4CD964', // green
+  'star': '#FFC542', // gold
+};
 
 const SettingsScreen = () => {
   const { colors } = useTheme();
@@ -22,10 +30,13 @@ const SettingsScreen = () => {
       style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={[styles.container, { backgroundColor: colors.background }]}>
 
+
+        <View style={{ height: 42}}/>
+        
         <TouchableOpacity style={styles.profileSection}>
           <View style={styles.profileAvatar}>
             <Image
-              source={require('../assets/images/settings.png')} // Replace with a local or network image
+              source={require('../assets/images/settings.png')}
               style={styles.avatarImage}
             />
           </View>
@@ -35,7 +46,6 @@ const SettingsScreen = () => {
           </View>
         </TouchableOpacity>
 
-        {/* Rewards Section */}
         <View style={styles.rewardsBox}>
           <View style={styles.rewardsHeader}>
             <Text style={styles.rewardsTitle}>⭐ My points</Text>
@@ -55,20 +65,20 @@ const SettingsScreen = () => {
           </View>
         </View>
 
-        {/* Options List */}
+
         <View style={styles.menuSection}>
-          {renderItem('Virtual experience', 'sparkles')}
-          {renderItem('Voice service', 'mic')}
-          {renderItem('Settings', 'settings')}
+          {renderItem('Virtual experience', 'auto-awesome', 'MaterialIcons')}
+          {renderItem('Voice service', 'keyboard-voice', 'MaterialIcons')}
+          {renderItem('Settings', 'settings', 'MaterialIcons')}
         </View>
 
         <View style={styles.menuSection}>
-          {renderItem('My goals', 'target')}
+          {renderItem('My goals', 'flag', 'MaterialIcons')}
         </View>
 
         <View style={styles.menuSection}>
-          {renderItem('Help and feedback', 'help-circle')}
-          {renderItem('Like this app?', 'star')}
+          {renderItem('Help and feedback', 'help-outline', 'MaterialIcons')}
+          {renderItem('Like this app?', 'star-border', 'MaterialIcons')}
         </View>
 
       </View>
@@ -76,68 +86,93 @@ const SettingsScreen = () => {
   );
 };
 
-
-
-const renderItem = (title: string, iconName: string) => (
+const renderItem = (title: string, iconName: string, iconType: 'Ionicons' | 'MaterialIcons' = 'Ionicons') => (
   <TouchableOpacity style={styles.menuItem} key={title}>
-    <Icon name={iconName} size={20} color="#000" style={styles.menuIcon} />
+    {iconType === 'Ionicons' ? (
+      <Icon name={iconName} size={22} color={iconColors[iconName] || '#000'} style={styles.menuIcon} />
+    ) : (
+      <MaterialIcons name={iconName} size={22} color={iconColors[iconName] || '#000'} style={styles.menuIcon} />
+    )}
     <Text style={styles.menuText}>{title}</Text>
-    <Icon name="chevron-forward" size={18} color="#aaa" style={styles.chevron} />
+    <Icon name="chevron-forward" size={20} color="#bbb" style={styles.chevron} />
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f7f7f7',
+    backgroundColor: '#F6F6F6',
   },
   profileSection: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff',
-    padding: 16,
-    marginTop: 10,
+    padding: 18,
+    marginHorizontal: 12,
+    marginTop: 18,
+    borderRadius: 18,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
   },
   profileAvatar: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
     backgroundColor: '#e5e5e5',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 12,
+    marginRight: 16,
   },
   avatarImage: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
+    width: 54,
+    height: 54,
+    borderRadius: 27,
   },
   profileText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
+    color: '#222',
   },
   subText: {
-    color: '#777',
-    fontSize: 12,
+    color: '#999',
+    fontSize: 13,
+    marginTop: 2,
   },
   rewardsBox: {
     backgroundColor: '#fff',
-    margin: 10,
+    marginHorizontal: 12,
+    marginTop: 16,
+    borderRadius: 16,
     padding: 16,
-    borderRadius: 12,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.06,
+    shadowRadius: 4,
   },
   rewardsHeader: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    alignItems: 'center',
     marginBottom: 12,
   },
   rewardsTitle: {
-    fontSize: 16,
-    fontWeight: '600',
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#222',
+    marginRight: 8,
   },
   rewardsButton: {
-    color: '#8a6f2f',
+    backgroundColor: '#C9B37E',
+    color: '#fff',
     fontWeight: 'bold',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    fontSize: 12,
+    overflow: 'hidden',
   },
   rewardsRow: {
     flexDirection: 'row',
@@ -145,37 +180,45 @@ const styles = StyleSheet.create({
   },
   rewardItem: {
     flex: 1,
-    backgroundColor: '#f3f3f3',
-    padding: 12,
-    borderRadius: 8,
+    backgroundColor: '#F8F6F0',
+    padding: 14,
+    borderRadius: 10,
     marginHorizontal: 4,
+    alignItems: 'flex-start',
   },
   rewardText: {
     fontSize: 14,
+    color: '#222',
     marginBottom: 4,
+    fontWeight: '500',
   },
   rewardPoints: {
-    color: '#f39c12',
+    color: '#FFC542',
     fontWeight: 'bold',
+    fontSize: 15,
   },
   menuSection: {
     backgroundColor: '#fff',
-    marginTop: 10,
+    marginHorizontal: 12,
+    borderRadius: 16,
+    marginTop: 16,
+    overflow: 'hidden',
   },
   menuItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 14,
-    paddingHorizontal: 16,
+    paddingVertical: 18,
+    paddingHorizontal: 18,
     borderBottomWidth: 1,
-    borderColor: '#eee',
+    borderColor: '#F2F2F2',
   },
   menuIcon: {
-    marginRight: 12,
+    marginRight: 16,
   },
   menuText: {
     flex: 1,
-    fontSize: 14,
+    fontSize: 16,
+    color: '#222',
   },
   chevron: {
     marginLeft: 10,

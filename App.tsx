@@ -1,8 +1,8 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { StatusBar } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import BottomTabNavigator from './src/navigation/BottomTabNavigator';
-import {ThemeProvider, useTheme} from './src/context/ThemeContext';
+import { ThemeProvider, useTheme } from './src/context/ThemeContext';
 
 
 function App(): React.JSX.Element {
@@ -16,7 +16,7 @@ function App(): React.JSX.Element {
 }
 
 const AppContent = () => {
-  const {isDarkMode} = useTheme();
+  const { isDarkMode } = useTheme();
   return (
     <>
       <StatusBar

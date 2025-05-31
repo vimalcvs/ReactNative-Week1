@@ -13,10 +13,7 @@ const config = {
   resolver: {
     assetExts: ['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'],
     sourceExts: ['js', 'jsx', 'ts', 'tsx', 'json', 'svg'],
-  },
-  extraNodeModules: {
-    '@react-navigation': require.resolve('@react-navigation'),
-  },
+  }
 };
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);
