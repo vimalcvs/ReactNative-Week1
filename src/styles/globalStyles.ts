@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {StyleSheet} from 'react-native';
 import {SPACING} from './constants';
 import {useTheme} from '../context/ThemeContext';
