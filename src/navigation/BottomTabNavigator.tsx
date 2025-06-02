@@ -15,25 +15,24 @@ const Tab = createBottomTabNavigator();
 const ICON_MAP = {
   Home: {
     filled: 'home',
-    outline: 'home-outline'
+    outline: 'home-outline',
   },
   Profile: {
     filled: 'person',
-    outline: 'person-outline'
+    outline: 'person-outline',
   },
   Offers: {
     filled: 'gift',
-    outline: 'gift-outline'
+    outline: 'gift-outline',
   },
   Settings: {
     filled: 'settings',
-    outline: 'settings-outline'
-  }
+    outline: 'settings-outline',
+  },
 } as const;
 
 const BottomTabNavigator = () => {
   const { colors } = useTheme();
-  
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -42,7 +41,7 @@ const BottomTabNavigator = () => {
           tabBarActiveTintColor: colors.primary,
           tabBarInactiveTintColor: colors.tabBarInactive,
           tabBarIcon: ({ color, size, focused }) => {
-            const iconName = focused 
+            const iconName = focused
               ? ICON_MAP[route.name as keyof typeof ICON_MAP].filled
               : ICON_MAP[route.name as keyof typeof ICON_MAP].outline;
             return <Icon name={iconName} size={size} color={color} />;

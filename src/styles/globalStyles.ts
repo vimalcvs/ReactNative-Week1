@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {SPACING, DIMENSIONS} from './constants';
+import {SPACING} from './constants';
 import {useTheme} from '../context/ThemeContext';
 
 export const createGlobalStyles = () => {
@@ -8,11 +8,11 @@ export const createGlobalStyles = () => {
   return StyleSheet.create({
     // Container styles
     container: {
-      flex: 1, 
+      flex: 1,
       backgroundColor: colors.background,
     },
     scrollContainer: {
-      flexGrow: 1,  
+      flexGrow: 1,
       paddingVertical: SPACING.xl,
       paddingHorizontal: SPACING.md,
       backgroundColor: colors.background,
@@ -200,6 +200,6 @@ export const createGlobalStyles = () => {
       width: 10,
       borderRadius: 5,
       backgroundColor: colors.primary,
-    }
+    },
   });
-}; 
+};

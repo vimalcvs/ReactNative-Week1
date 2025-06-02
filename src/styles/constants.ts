@@ -13,4 +13,4 @@ export const SPACING = {
 export const DIMENSIONS = {
   screenWidth: width,
   screenHeight: height,
-}; 
+};

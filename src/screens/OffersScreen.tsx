@@ -1,7 +1,7 @@
 import {
   View,
   Text,
-  ScrollView, 
+  ScrollView,
 } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
 import { createGlobalStyles } from '../styles/globalStyles';
@@ -18,4 +18,4 @@ const OffersScreen = () => {
   );
 };
 
-export default OffersScreen; 
+export default OffersScreen;
