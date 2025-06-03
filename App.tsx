@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { ThemeProvider, useTheme } from './src/context/ThemeContext';
+import { ThemeProvider, useColors } from './src/context/ThemeContext';
 import RootNavigator from './src/navigation/RootNavigator';
 
 function App(): React.JSX.Element {
@@ -15,7 +15,7 @@ function App(): React.JSX.Element {
 }
 
 const AppContent = () => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode } = useColors();
   return (
     <>
       <StatusBar

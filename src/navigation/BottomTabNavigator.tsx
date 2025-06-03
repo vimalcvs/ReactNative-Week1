@@ -1,14 +1,14 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import { useTheme } from '../context/ThemeContext';
+import { useColors } from '../context/ThemeContext';
 import { PlatformPressable } from '@react-navigation/elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import HomeScreen from '../screens/main/HomeScreen';
-import ProfileScreen from '../screens/main/ProfileScreen';
-import SettingsScreen from '../screens/main/SettingsScreen';
-import OffersScreen from '../screens/main/OffersScreen';
+import HomeScreen from '../screens/main/home/HomeScreen';
+import ProfileScreen from '../screens/main/profile/ProfileScreen';
+import SettingsScreen from '../screens/main/settings/SettingsScreen';
+import OffersScreen from '../screens/main/offers/OffersScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,7 +47,7 @@ const createTabBarIcon = (route: { name: string }) => (props: any) => (
 );
 
 const BottomTabNavigator = () => {
-  const { colors } = useTheme();
+  const { colors } = useColors();
   return (
     <NavigationContainer>
       <Tab.Navigator

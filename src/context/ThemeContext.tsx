@@ -34,6 +34,8 @@ type ThemeContextType = {
     divider: string;
     input: string;
     placeholder: string;
+    shadow: string;
+   
 
     // Social colors
     facebook: string;
@@ -83,12 +85,13 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
     info: '#5856D6',
 
     // UI Element colors
-    card: isDarkMode ? '#1C1C1E' : '#F2F2F7',
+    card: isDarkMode ? '#191919' : '#ffffff',
     border: isDarkMode ? '#222222' : '#eeeeee',
     divider: isDarkMode ? '#38383A' : '#C6C6C8',
     input: isDarkMode ? '#2C2C2E' : '#FFFFFF',
-    placeholder: isDarkMode ? '#8E8E93' : '#C7C7CC',
-
+    placeholder: isDarkMode ? '#2c2c2c' : '#eeeeee',
+    shadow: isDarkMode ? 'rgba(91, 91, 91, 0.607)' : 'rgba(72, 72, 72, 0.547)',
+ 
     // Social colors
     facebook: '#1877F2',
     google: '#DB4437',
@@ -104,7 +107,7 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
   );
 };
 
-export const useTheme = () => {
+export const useColors = () => {
   const context = useContext(ThemeContext);
   if (context === undefined) {
     throw new Error('useTheme must be used within a ThemeProvider');

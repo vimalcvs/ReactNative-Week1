@@ -1,4 +1,4 @@
-import SplashScreen from '../screens/SplashScreen';
+import SplashScreen from '../screens/splash/SplashScreen';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import BottomTabNavigator from './BottomTabNavigator';

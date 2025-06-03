@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
 import {SPACING} from './constants';
-import {useTheme} from '../context/ThemeContext';
+import {useColors} from '../context/ThemeContext';
 
-export const createGlobalStyles = () => {
-  const {colors} = useTheme();
+export const useStyles = () => {
+  const {colors} = useColors();
 
   return StyleSheet.create({
     // Container styles

@@ -3,16 +3,17 @@ import {
   Text,
   ScrollView,
 } from 'react-native';
-import { useTheme } from '../../context/ThemeContext';
-import { createGlobalStyles } from '../../styles/globalStyles'; 
+import { useColors } from '../../../context/ThemeContext';
+import { useStyles } from '../../../styles/globalStyles';
 
 const HomeScreen = () => {
-  const { colors } = useTheme();
-  const styles = createGlobalStyles();
+  const { colors } = useColors();
+  const styles = useStyles();
   return (
     <ScrollView style={[styles.scrollContainer, { backgroundColor: colors.background }]}>
       <View style={[styles.container]}>
         <Text style={styles.title}>Welcome Home!</Text>
+
       </View>
     </ScrollView>
   );

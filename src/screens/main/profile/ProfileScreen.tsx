@@ -1,14 +1,15 @@
 import {
   View,
-  Text,
   ScrollView,
+  Text,
 } from 'react-native';
-import { useTheme } from '../../context/ThemeContext';
-import { createGlobalStyles } from '../../styles/globalStyles';
+import { useColors } from '../../../context/ThemeContext';
+import { useStyles } from '../../../styles/globalStyles';
 
-const OffersScreen = () => {
-  const { colors } = useTheme();
-  const styles = createGlobalStyles();
+const ProfileScreen = () => {
+  const { colors } = useColors();
+  const styles = useStyles();
+
   return (
     <ScrollView style={[styles.scrollContainer, { backgroundColor: colors.background }]}>
       <View style={[styles.container]}>
@@ -18,4 +19,4 @@ const OffersScreen = () => {
   );
 };
 
-export default OffersScreen;
+export default ProfileScreen;
