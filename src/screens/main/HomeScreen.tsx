@@ -1,22 +1,21 @@
 import {
   View,
+  Text,
   ScrollView,
 } from 'react-native';
-import { useTheme } from '../context/ThemeContext';
-import { createGlobalStyles } from '../styles/globalStyles';
-import Icon from 'react-native-vector-icons/Entypo';
+import { useTheme } from '../../context/ThemeContext';
+import { createGlobalStyles } from '../../styles/globalStyles'; 
 
-const ProfileScreen = () => {
+const HomeScreen = () => {
   const { colors } = useTheme();
   const styles = createGlobalStyles();
-
   return (
     <ScrollView style={[styles.scrollContainer, { backgroundColor: colors.background }]}>
       <View style={[styles.container]}>
-        <Icon name="heart-outlined" size={300} color="#000" />
+        <Text style={styles.title}>Welcome Home!</Text>
       </View>
     </ScrollView>
   );
 };
 
-export default ProfileScreen;
+export default HomeScreen;

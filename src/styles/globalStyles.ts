@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import {StyleSheet} from 'react-native';
 import {SPACING} from './constants';
 import {useTheme} from '../context/ThemeContext';
@@ -79,7 +78,7 @@ export const createGlobalStyles = () => {
     buttonText: {
       fontSize: 16,
       fontWeight: '600',
-      color: colors.background,
+      color: colors.white,
     },
     outlineButton: {
       paddingHorizontal: SPACING.lg,

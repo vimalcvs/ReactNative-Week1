@@ -39,6 +39,8 @@ type ThemeContextType = {
     facebook: string;
     google: string;
     twitter: string;
+    white: string;
+    black: string;
   };
 };
 
@@ -82,7 +84,7 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
 
     // UI Element colors
     card: isDarkMode ? '#1C1C1E' : '#F2F2F7',
-    border: isDarkMode ? '#38383A' : '#C6C6C8',
+    border: isDarkMode ? '#222222' : '#eeeeee',
     divider: isDarkMode ? '#38383A' : '#C6C6C8',
     input: isDarkMode ? '#2C2C2E' : '#FFFFFF',
     placeholder: isDarkMode ? '#8E8E93' : '#C7C7CC',
@@ -91,6 +93,8 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
     facebook: '#1877F2',
     google: '#DB4437',
     twitter: '#1DA1F2',
+    white: '#FFFFFF',
+    black: '#000000',
   };
 
   return (

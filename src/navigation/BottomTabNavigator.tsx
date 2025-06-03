@@ -5,10 +5,10 @@ import { useTheme } from '../context/ThemeContext';
 import { PlatformPressable } from '@react-navigation/elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import HomeScreen from '../screens/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen';
-import SettingsScreen from '../screens/SettingsScreen';
-import OffersScreen from '../screens/OffersScreen';
+import HomeScreen from '../screens/main/HomeScreen';
+import ProfileScreen from '../screens/main/ProfileScreen';
+import SettingsScreen from '../screens/main/SettingsScreen';
+import OffersScreen from '../screens/main/OffersScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,6 +31,21 @@ const ICON_MAP = {
   },
 } as const;
 
+const TabBarIcon = ({ route, color, size, focused }: { route: { name: string }, color: string, size: number, focused: boolean }) => {
+  const iconName = focused
+    ? ICON_MAP[route.name as keyof typeof ICON_MAP].filled
+    : ICON_MAP[route.name as keyof typeof ICON_MAP].outline;
+  return <Icon name={iconName} size={size} color={color} />;
+};
+
+const TabBarButton = (props: any) => (
+  <PlatformPressable {...props} android_ripple={{ color: 'transparent' }} />
+);
+
+const createTabBarIcon = (route: { name: string }) => (props: any) => (
+  <TabBarIcon route={route} {...props} />
+);
+
 const BottomTabNavigator = () => {
   const { colors } = useTheme();
   return (
@@ -40,16 +55,9 @@ const BottomTabNavigator = () => {
         screenOptions={({ route }) => ({
           tabBarActiveTintColor: colors.primary,
           tabBarInactiveTintColor: colors.tabBarInactive,
-          tabBarIcon: ({ color, size, focused }) => {
-            const iconName = focused
-              ? ICON_MAP[route.name as keyof typeof ICON_MAP].filled
-              : ICON_MAP[route.name as keyof typeof ICON_MAP].outline;
-            return <Icon name={iconName} size={size} color={color} />;
-          },
+          tabBarIcon: createTabBarIcon(route),
           headerShown: false,
-          tabBarButton: (props) => (
-            <PlatformPressable {...props} android_ripple={{ color: 'transparent' }} />
-          ),
+          tabBarButton: TabBarButton,
           tabBarStyle: {
             backgroundColor: colors.background,
             borderTopColor: colors.border,
