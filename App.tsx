@@ -1,9 +1,8 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 import { ThemeProvider, useTheme } from './src/context/ThemeContext';
-
+import RootNavigator from './src/navigation/RootNavigator';
 
 function App(): React.JSX.Element {
   return (
@@ -23,8 +22,9 @@ const AppContent = () => {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={isDarkMode ? '#000000' : '#FFFFFF'}
       />
-      <BottomTabNavigator />
+      <RootNavigator />
     </>
   );
 };
+
 export default App;
