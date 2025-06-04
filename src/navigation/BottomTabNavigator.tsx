@@ -1,14 +1,13 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
 import { useColors } from '../context/ThemeContext';
 import { PlatformPressable } from '@react-navigation/elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from '../screens/main/home/HomeScreen';
 import ProfileScreen from '../screens/main/profile/ProfileScreen';
-import SettingsScreen from '../screens/main/settings/SettingsScreen';
 import OffersScreen from '../screens/main/offers/OffersScreen';
+import SettingsScreen from '../screens/main/settings/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -49,28 +48,26 @@ const createTabBarIcon = (route: { name: string }) => (props: any) => (
 const BottomTabNavigator = () => {
   const { colors } = useColors();
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Home"
-        screenOptions={({ route }) => ({
-          tabBarActiveTintColor: colors.primary,
-          tabBarInactiveTintColor: colors.tabBarInactive,
-          tabBarIcon: createTabBarIcon(route),
-          headerShown: false,
-          tabBarButton: TabBarButton,
-          tabBarStyle: {
-            backgroundColor: colors.background,
-            borderTopColor: colors.tabBar,
-            borderTopWidth: 0.5,
-            height: 80,
-          },
-        })}>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-        <Tab.Screen name="Offers" component={OffersScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={({ route }) => ({
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.tabBarInactive,
+        tabBarIcon: createTabBarIcon(route),
+        headerShown: false,
+        tabBarButton: TabBarButton,
+        tabBarStyle: {
+          backgroundColor: colors.background,
+          borderTopColor: colors.tabBar,
+          borderTopWidth: 0.5,
+          height: 80,
+        },
+      })}>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Offers" component={OffersScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
   );
 };
 

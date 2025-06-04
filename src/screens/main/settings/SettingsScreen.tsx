@@ -6,9 +6,13 @@ import { useStyles } from '../../../styles/globalStyles';
 import React from 'react';
 import { MyAccountItem, RegistionItem, RowBackground, SettingRowItem } from './SettingsComponent';
 import { SpaceV } from '../../../component/space/Space';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+
 const SettingsScreen: React.FC = () => {
   const { colors } = useColors();
   const appStyles = useStyles();
+  const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
   const handleRegisterPress = () => {
     console.log('Register pressed');
@@ -46,7 +50,7 @@ const SettingsScreen: React.FC = () => {
               title="Settings"
               onPress={() => {
                 navigation.navigate('SettingsDetails');
-               }}
+              }}
               icon="settings"
               iconBackground={colors.yellow} />
             <SettingRowItem
