@@ -43,13 +43,26 @@ const SettingsScreen: React.FC = () => {
           <>
             <SettingRowItem
               title="Notifications"
-              onPress={() => { }}
+              onPress={() => {
+                navigation.navigate('SettingsNotification', {
+                  message: 'Welcome to notifications'
+                });
+              }}
               icon="notifications"
               iconBackground={colors.blue} />
             <SettingRowItem
               title="Settings"
               onPress={() => {
-                navigation.navigate('SettingsDetails');
+                navigation.navigate('SettingsDetails', {
+                  userData: {
+                    name: 'John Doe',
+                    email: 'john@example.com',
+                    preferences: {
+                      theme: 'dark',
+                      language: 'en'
+                    }
+                  }
+                });
               }}
               icon="settings"
               iconBackground={colors.yellow} />

@@ -1,30 +1,48 @@
 import {
   ScrollView,
+  Text,
+  View,
 } from 'react-native';
 import { useColors } from '../../../context/ThemeContext';
 import { useStyles } from '../../../styles/globalStyles';
-import React from 'react';
-import { RegistionItem } from './SettingsComponent';
+import React from 'react';  
 import { SpaceV } from '../../../component/space/Space';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../../navigation/RootNavigator';
 
-const SettingsDetails: React.FC = () => {
+type Props = NativeStackScreenProps<RootStackParamList, 'SettingsDetails'>;
+
+const SettingsDetails: React.FC<Props> = ({ route }) => {
   const { colors } = useColors();
   const appStyles = useStyles();
-
-  const handleRegisterPress = () => {
-    console.log('Register pressed');
-  };
+  const { userData } = route.params;
 
   return (
     <ScrollView
       style={[appStyles.scrollContainer, { backgroundColor: colors.background }]}
       showsVerticalScrollIndicator={false}>
       <SpaceV size={32} />
-      <RegistionItem
-        icon="person"
-        title="Register/Sign In"
-        subtitle="19 virtual devices"
-        onPress={handleRegisterPress} />
+      <View style={{ paddingHorizontal: 16 }}>
+        <Text style={{ color: colors.textPrimary, fontSize: 20, fontWeight: 'bold', marginBottom: 8 }}>
+          User Information
+        </Text>
+        <Text style={{ color: colors.textPrimary, fontSize: 16, marginBottom: 4 }}>
+          Name: {userData.name}
+        </Text>
+        <Text style={{ color: colors.textPrimary, fontSize: 16, marginBottom: 4 }}>
+          Email: {userData.email}
+        </Text>
+        
+        <Text style={{ color: colors.textPrimary, fontSize: 20, fontWeight: 'bold', marginTop: 16, marginBottom: 8 }}>
+          Preferences
+        </Text>
+        <Text style={{ color: colors.textPrimary, fontSize: 16, marginBottom: 4 }}>
+          Theme: {userData.preferences.theme}
+        </Text>
+        <Text style={{ color: colors.textPrimary, fontSize: 16, marginBottom: 4 }}>
+          Language: {userData.preferences.language}
+        </Text>
+      </View>
       <SpaceV size={16} />
     </ScrollView>
   );
