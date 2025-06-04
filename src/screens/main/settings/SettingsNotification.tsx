@@ -5,7 +5,7 @@ import {
 import { useColors } from '../../../context/ThemeContext';
 import { useStyles } from '../../../styles/globalStyles';
 import React from 'react'; 
-import { SpaceV } from '../../../component/space/Space';
+import { SpaceV } from '../../../components/space/Space';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../../navigation/RootNavigator';
 

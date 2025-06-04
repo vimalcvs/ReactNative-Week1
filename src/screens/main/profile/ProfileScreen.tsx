@@ -4,8 +4,8 @@ import {
 } from 'react-native';
 import { useColors } from '../../../context/ThemeContext';
 import { useStyles } from '../../../styles/globalStyles';
-import { InputField } from '../../../component/textinput/TextInput';
-import { SpaceV } from '../../../component/space/Space';
+import { InputField } from '../../../components/textinput/TextInput';
+import { SpaceV } from '../../../components/space/Space';
 import { useState } from 'react';
 const ProfileScreen = () => {
   const { colors } = useColors();

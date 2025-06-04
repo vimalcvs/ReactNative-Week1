@@ -1,3 +1,61 @@
+# React Native Project
+
+## Project Structure
+```
+src/
+├── assets/         # Images, fonts, and other static files
+├── components/     # Reusable components
+├── constants/      # Application constants
+├── context/        # React Context files
+├── hooks/          # Custom React Hooks
+├── navigation/     # Navigation configuration
+├── screens/        # Screen components
+├── services/       # API calls and backend services
+├── styles/         # Global styles
+├── types/          # TypeScript types
+└── utils/          # Helper functions and utilities
+```
+
+## Setup Instructions
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npm start
+```
+
+3. Run on Android:
+```bash
+npm run android
+```
+
+4. Run on iOS:
+```bash
+npm run ios
+```
+
+## Development Guidelines
+
+- Use TypeScript for type safety
+- Follow ESLint and Prettier rules
+- Write unit tests for components
+- Keep components small and reusable
+- Use proper naming conventions
+- Document your code
+
+## Available Scripts
+
+- `npm start` - Start the development server
+- `npm run android` - Run on Android
+- `npm run ios` - Run on iOS
+- `npm test` - Run tests
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
@@ -66,7 +124,7 @@ This is one way to run your app — you can also build it directly from Android 
 
 Now that you have successfully run the app, let's make changes!
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
 
 When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
 

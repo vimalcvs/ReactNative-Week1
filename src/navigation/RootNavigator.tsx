@@ -48,7 +48,7 @@ const RootNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="MainTabs" component={BottomTabNavigator} />
-        <Stack.Screen name="SettingsDetails" component={SettingsDetails} /> 
+        <Stack.Screen name="SettingsDetails" component={SettingsDetails} />
         <Stack.Screen name="SettingsNotification" component={SettingsNotification} />
       </Stack.Navigator>
     </NavigationContainer>
