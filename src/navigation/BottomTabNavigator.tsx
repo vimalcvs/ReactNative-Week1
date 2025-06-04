@@ -60,7 +60,9 @@ const BottomTabNavigator = () => {
           tabBarButton: TabBarButton,
           tabBarStyle: {
             backgroundColor: colors.background,
-            borderTopColor: colors.border,
+            borderTopColor: colors.tabBar,
+            borderTopWidth: 0.5,
+            height: 80,
           },
         })}>
         <Tab.Screen name="Home" component={HomeScreen} />

@@ -1,53 +1,55 @@
 import React from 'react';
-import {Keyboard, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View} from 'react-native';
+import { Keyboard, TextInput, TouchableWithoutFeedback, View, Text } from 'react-native';
+import { useStyles } from '../../styles/globalStyles';
+import { useColors } from '../../context/ThemeContext';
 
-const App: React.FC = () => {
-    return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View style={styles.container}>
-                <Text style={styles.title}>Auto Focus Keyboard Input</Text>
-                <Text style={styles.description}>Please enter text with auto focus:</Text>
-                <TextInput
-                    style={styles.input}
-                    keyboardType="default" // keyboardType="decimal-pad"
-                    placeholder="Default Keyboard"
-                    autoFocus={true}
-                    placeholderTextColor="#b3b3b3"
-                />
-            </View>
-        </TouchableWithoutFeedback>
-    );
-};
-
-export default App;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#fff',
-    },
-    title: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#1c1c1e',
-        marginBottom: 5,
-    },
-    description: {
-        fontSize: 14,
-        color: '#1c1c1e',
-        marginBottom: 10,
-    },
-    input: {
-        height: 40,
-        borderColor: '#d8d8d8',
-        borderWidth: 1,
-        borderRadius: 5,
-        width: '80%',
-        padding: 10,
-        color: '#1c1c1e',
-    },
-});
-
- 
+export const InputField: React.FC<{
+    placeholder: string;
+    keyboardType?: 'default';
+    autoFocus?: boolean;
+    onChangeText: (text: string) => void;
+    value: string;
+    secureTextEntry?: boolean;
+    label: string;
+    error?: string;
+    onFocus?: () => void;
+    onBlur?: () => void;
+}> = ({
+    placeholder,
+    keyboardType = 'default',
+    autoFocus = false,
+    onChangeText,
+    value,
+    secureTextEntry = false,
+    label,
+    error,
+    onFocus,
+    onBlur,
+}) => {
+        const { colors } = useColors();
+        const mainStyles = useStyles();
+        return (
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <View style={mainStyles.container}>
+                    <Text style={[mainStyles.bodyText, mainStyles.labelContainer, { color: colors.textSecondary }]}>{label}</Text>
+                    <TextInput
+                        style={[
+                            mainStyles.input,
+                            { backgroundColor: colors.background },
+                            error && mainStyles.inputError,
+                        ]}
+                        keyboardType={keyboardType}
+                        placeholder={placeholder}
+                        autoFocus={autoFocus}
+                        placeholderTextColor={colors.placeholder}
+                        onChangeText={onChangeText}
+                        value={value}
+                        secureTextEntry={secureTextEntry}
+                        onFocus={onFocus}
+                        onBlur={onBlur}
+                    />
+                    {error && <Text style={mainStyles.errorText}>{error}</Text>}
+                </View>
+            </TouchableWithoutFeedback>
+        );
+    };

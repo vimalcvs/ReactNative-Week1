@@ -1,5 +1,5 @@
-import React, {createContext, useState, useContext, useEffect} from 'react';
-import {useColorScheme} from 'react-native';
+import React, { createContext, useState, useContext, useEffect } from 'react';
+import { useColorScheme } from 'react-native';
 
 type ThemeContextType = {
   isDarkMode: boolean;
@@ -7,10 +7,15 @@ type ThemeContextType = {
   colors: {
     // Base colors
     background: string;
-    text: string;
     tabBar: string;
     tabBarActive: string;
     tabBarInactive: string;
+
+    // Text hierarchy
+    textPrimary: string;
+    textSecondary: string;
+    textTertiary: string;
+    textMuted: string;
 
     // Primary colors
     primary: string;
@@ -28,6 +33,13 @@ type ThemeContextType = {
     error: string;
     info: string;
 
+    orange: string;
+    blue: string;
+    purple: string;
+    green: string;
+    yellow: string;
+    red: string;
+
     // UI Element colors
     card: string;
     border: string;
@@ -35,7 +47,12 @@ type ThemeContextType = {
     input: string;
     placeholder: string;
     shadow: string;
-   
+    highlight: string;
+    overlay: string;
+    muted: string;
+    disabled: string;
+    icon: string;
+    link: string;
 
     // Social colors
     facebook: string;
@@ -48,7 +65,7 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const systemColorScheme = useColorScheme();
   const [isDarkMode, setIsDarkMode] = useState(systemColorScheme === 'dark');
 
@@ -63,10 +80,19 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
   const colors = {
     // Base colors
     background: isDarkMode ? '#000000' : '#FFFFFF',
-    text: isDarkMode ? '#FFFFFF' : '#000000',
-    tabBar: isDarkMode ? '#1C1C1E' : '#FFFFFF',
+    backgroundLight: isDarkMode ? '#1C1C1E' : '#F5F5F5',
+    backgroundDark: isDarkMode ? '#121212' : '#E5E5E5',
+
+    // Text hierarchy
+    textPrimary: isDarkMode ? '#FFFFFF' : '#000000',
+    textSecondary: isDarkMode ? '#A1A1A1' : '#4B4B4B',
+    textTertiary: isDarkMode ? '#6E6E6E' : '#8E8E93',
+    textMuted: isDarkMode ? '#A1A1A1' : '#6E6E6E',
+
+
+    tabBar: isDarkMode ? '#1212129f' : '#FFFFFF',
     tabBarActive: '#007AFF',
-    tabBarInactive: isDarkMode ? '#8E8E93' : '#8E8E93',
+    tabBarInactive: '#8E8E93',
 
     // Primary colors
     primary: '#007AFF',
@@ -75,23 +101,40 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
 
     // Secondary colors
     secondary: '#5856D6',
-    secondaryLight: isDarkMode ? '#7A79E0' : '#7A79E0',
-    secondaryDark: isDarkMode ? '#3A39B3' : '#3A39B3',
+    secondaryLight: '#7A79E0',
+    secondaryDark: '#3A39B3',
 
     // Status colors
     success: '#34C759',
+    successLight: '#66DB87',
     warning: '#FF9500',
     error: '#FF3B30',
-    info: '#5856D6',
+    dangerLight: '#FF6B60',
+    info: '#5AC8FA',
+
+
+    orange: '#FFA500',
+    blue: '#5AC8FA',
+    purple: '#800080',
+    green: '#34C759',
+    yellow: '#FF9500',
+    red: '#FF3B30',
+
 
     // UI Element colors
-    card: isDarkMode ? '#191919' : '#ffffff',
-    border: isDarkMode ? '#222222' : '#eeeeee',
+    card: isDarkMode ? '#111111' : '#FFFFFF',
+    border: isDarkMode ? '#2C2C2E' : '#E0E0E0',
     divider: isDarkMode ? '#38383A' : '#C6C6C8',
     input: isDarkMode ? '#2C2C2E' : '#FFFFFF',
-    placeholder: isDarkMode ? '#2c2c2c' : '#eeeeee',
-    shadow: isDarkMode ? 'rgba(91, 91, 91, 0.607)' : 'rgba(72, 72, 72, 0.547)',
- 
+    placeholder: isDarkMode ? '#636366' : '#C7C7CD',
+    shadow: isDarkMode ? '#2C2C2E' : '#00000079',
+    highlight: isDarkMode ? '#3A3A3C' : '#E5E5EA',
+    overlay: isDarkMode ? '#00000080' : '#cfcfcf50',
+    muted: isDarkMode ? '#48484A' : '#D1D1D6',
+    disabled: isDarkMode ? '#3C3C3E' : '#D1D1D6',
+    icon: isDarkMode ? '#FFFFFF' : '#1C1C1E',
+    link: '#0A84FF',
+
     // Social colors
     facebook: '#1877F2',
     google: '#DB4437',
@@ -100,8 +143,9 @@ export const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children})
     black: '#000000',
   };
 
+
   return (
-    <ThemeContext.Provider value={{isDarkMode, toggleTheme, colors}}>
+    <ThemeContext.Provider value={{ isDarkMode, toggleTheme, colors }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -31,39 +31,43 @@ export const useStyles = () => {
       fontWeight: 'bold',
       marginBottom: SPACING.sm,
       textAlign: 'center',
-      color: colors.text,
+      color: colors.textPrimary,
     },
     subtitle: {
       fontSize: 16,
       marginBottom: SPACING.lg,
       textAlign: 'center',
-      color: colors.tabBarInactive,
+      color: colors.textSecondary,
     },
     heading: {
       fontSize: 24,
       fontWeight: 'bold',
       marginBottom: SPACING.md,
-      color: colors.text,
+      color: colors.textPrimary,
     },
     bodyText: {
       fontSize: 16,
       lineHeight: 24,
-      color: colors.text,
+      color: colors.textPrimary,
     },
     caption: {
       fontSize: 14,
       opacity: 0.7,
-      color: colors.tabBarInactive,
+      color: colors.textSecondary,
     },
     text: {
       fontSize: 16,
       marginBottom: SPACING.sm,
-      color: colors.text,
+      color: colors.textPrimary,
     },
     label: {
       fontSize: 14,
       marginBottom: SPACING.xs,
-      color: colors.text,
+      color: colors.textPrimary,
+    },
+    labelContainer: {
+      marginHorizontal: 6,
+      marginVertical: 6,
     },
 
     // Button styles
@@ -102,7 +106,7 @@ export const useStyles = () => {
       marginBottom: SPACING.md,
       elevation: 2,
       backgroundColor: colors.card,
-      shadowColor: colors.text,
+      shadowColor: colors.textPrimary,
       shadowOffset: {
         width: 0,
         height: 2,
@@ -114,11 +118,11 @@ export const useStyles = () => {
       fontSize: 18,
       fontWeight: 'bold',
       marginBottom: SPACING.xs,
-      color: colors.text,
+      color: colors.textPrimary,
     },
     cardText: {
       fontSize: 14,
-      color: colors.tabBarInactive,
+        color: colors.textSecondary,
     },
 
     // Input styles
@@ -131,13 +135,24 @@ export const useStyles = () => {
       fontSize: 16,
       backgroundColor: colors.input,
       borderColor: colors.border,
-      color: colors.text,
+      color: colors.textPrimary,
+    },
+    inputError: {
+      borderColor: colors.error,
+      borderWidth: 1,
+    },
+    errorText: {
+      color: colors.error,
+      fontSize: 12,
+      marginTop: -SPACING.sm,
+      marginBottom: SPACING.sm,
+      marginLeft: SPACING.xs,
     },
     inputLabel: {
       fontSize: 16,
       marginBottom: SPACING.xs,
       fontWeight: '500',
-      color: colors.text,
+      color: colors.textPrimary,
     },
 
     // Image styles
@@ -168,7 +183,7 @@ export const useStyles = () => {
     },
     listItemText: {
       fontSize: 16,
-      color: colors.text,
+      color: colors.textPrimary,
     },
 
     // Layout
@@ -193,7 +208,7 @@ export const useStyles = () => {
       justifyContent: 'center',
       alignItems: 'center',
       marginRight: SPACING.sm,
-      borderColor: colors.text,
+      borderColor: colors.textPrimary,
     },
     radioButtonSelected: {
       height: 10,
