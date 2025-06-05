@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import BottomTabNavigator from './BottomTabNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SettingsDetails from '../screens/main/settings/SettingsDetails';
 import { NavigationContainer, ParamListBase } from '@react-navigation/native';
-import SettingsNotification from '../screens/main/settings/SettingsNotification';
+import SettingsDetails from '../screens/settings/SettingsDetails';
+import SettingsNotification from '../screens/settings/SettingsNotification';
 
-// Define interfaces for type safety
+
+
 interface UserPreferences {
   theme: string;
   language: string;
@@ -48,8 +49,28 @@ const RootNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="MainTabs" component={BottomTabNavigator} />
-        <Stack.Screen name="SettingsDetails" component={SettingsDetails} />
-        <Stack.Screen name="SettingsNotification" component={SettingsNotification} />
+        <Stack.Screen
+          name="SettingsDetails"
+          component={SettingsDetails}
+          options={{
+            title: 'Settings',
+            headerStyle: {
+              backgroundColor: '#6200EE', 
+            },
+            headerTintColor: '#fff', 
+            headerTitleAlign: 'center',  
+          }} />
+        <Stack.Screen
+          name="SettingsNotification"
+          component={SettingsNotification}
+          options={{
+            title: 'Settings',
+            headerStyle: {
+              backgroundColor: '#6200EE', 
+            },
+            headerTintColor: '#fff', 
+            headerTitleAlign: 'center',  
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

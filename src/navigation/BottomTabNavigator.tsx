@@ -4,10 +4,10 @@ import { useColors } from '../context/ThemeContext';
 import { PlatformPressable } from '@react-navigation/elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import HomeScreen from '../screens/main/home/HomeScreen';
-import ProfileScreen from '../screens/main/profile/ProfileScreen';
-import OffersScreen from '../screens/main/offers/OffersScreen';
-import SettingsScreen from '../screens/main/settings/SettingsScreen';
+import HomeScreen from '../screens/home/HomeScreen';
+import ProfileScreen from '../screens/profile/ProfileScreen';
+import OffersScreen from '../screens/offers/OffersScreen';
+import SettingsScreen from '../screens/settings/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
 

@@ -3,8 +3,9 @@ import {
   Text,
   ScrollView,
 } from 'react-native';
-import { useColors } from '../../../context/ThemeContext';
-import { useStyles } from '../../../styles/globalStyles';
+import { useStyles } from '../../styles/globalStyles';
+import { useColors } from '../../context/ThemeContext';
+ 
 
 const OffersScreen = () => {
   const { colors } = useColors();

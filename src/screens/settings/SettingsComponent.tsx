@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useColors } from '../../../context/ThemeContext';
-import { useStyles } from '../../../styles/globalStyles';
+import { useColors } from '../../context/ThemeContext';
+import { useStyles } from '../../styles/globalStyles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { SpaceH } from '../../../components/space/Space';
+import { SpaceH } from '../../components/space/Space';
 import React from 'react';
 
 export const RegistionItem: React.FC<{

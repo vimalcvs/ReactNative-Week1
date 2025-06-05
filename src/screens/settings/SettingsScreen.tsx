@@ -1,11 +1,10 @@
 import {
   ScrollView,
 } from 'react-native';
-import { useColors } from '../../../context/ThemeContext';
-import { useStyles } from '../../../styles/globalStyles';
-import React from 'react';
+import { useColors } from '../../context/ThemeContext';
+import { useStyles } from '../../styles/globalStyles';
 import { MyAccountItem, RegistionItem, RowBackground, SettingRowItem } from './SettingsComponent';
-import { SpaceV } from '../../../components/space/Space';
+import { SpaceV } from '../../components/space/Space';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 
@@ -16,7 +15,7 @@ const SettingsScreen: React.FC = () => {
 
   const handleRegisterPress = () => {
     console.log('Register pressed');
-  };
+  }
 
   return (
     <ScrollView

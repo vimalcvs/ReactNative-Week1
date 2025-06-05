@@ -3,19 +3,31 @@ import {
   Text,
   View,
 } from 'react-native';
-import { useColors } from '../../../context/ThemeContext';
-import { useStyles } from '../../../styles/globalStyles';
-import React from 'react';  
-import { SpaceV } from '../../../components/space/Space';
+import { useColors } from '../../context/ThemeContext';
+import { useStyles } from '../../styles/globalStyles';
+import React, { useLayoutEffect } from 'react';  
+import { SpaceV } from '../../components/space/Space';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/RootNavigator';
+import { RootStackParamList } from '../../navigation/RootNavigator';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'SettingsDetails'>;
 
-const SettingsDetails: React.FC<Props> = ({ route }) => {
+const SettingsDetails: React.FC<Props> = ({ route, navigation }) => {
   const { colors } = useColors();
   const appStyles = useStyles();
   const { userData } = route.params;
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: true,
+      headerTitle: 'Settings Details',
+      headerStyle: {
+        backgroundColor: colors.background,
+      },
+      headerTintColor: colors.textPrimary,
+      headerShadowVisible: false,
+    });
+  }, [navigation, colors]);
 
   return (
     <ScrollView
