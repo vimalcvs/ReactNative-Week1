@@ -7,8 +7,6 @@ import { NavigationContainer, ParamListBase } from '@react-navigation/native';
 import SettingsDetails from '../screens/settings/SettingsDetails';
 import SettingsNotification from '../screens/settings/SettingsNotification';
 
-
-
 interface UserPreferences {
   theme: string;
   language: string;
@@ -51,26 +49,10 @@ const RootNavigator = () => {
         <Stack.Screen name="MainTabs" component={BottomTabNavigator} />
         <Stack.Screen
           name="SettingsDetails"
-          component={SettingsDetails}
-          options={{
-            title: 'Settings',
-            headerStyle: {
-              backgroundColor: '#6200EE', 
-            },
-            headerTintColor: '#fff', 
-            headerTitleAlign: 'center',  
-          }} />
+          component={SettingsDetails}/>
         <Stack.Screen
           name="SettingsNotification"
-          component={SettingsNotification}
-          options={{
-            title: 'Settings',
-            headerStyle: {
-              backgroundColor: '#6200EE', 
-            },
-            headerTintColor: '#fff', 
-            headerTitleAlign: 'center',  
-          }} />
+          component={SettingsNotification} />
       </Stack.Navigator>
     </NavigationContainer>
   );

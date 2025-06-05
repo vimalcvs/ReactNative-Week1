@@ -13,7 +13,7 @@ export const useStyles = () => {
     },
     scrollContainer: {
       flexGrow: 1,
-      paddingVertical: SPACING.xl,
+      paddingVertical: SPACING.xs,
       paddingHorizontal: SPACING.md,
       backgroundColor: colors.background,
     },
@@ -41,8 +41,7 @@ export const useStyles = () => {
     },
     heading: {
       fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: SPACING.md,
+      fontWeight: 'bold', 
       color: colors.textPrimary,
     },
     bodyText: {
@@ -73,25 +72,27 @@ export const useStyles = () => {
     // Button styles
     button: {
       paddingHorizontal: SPACING.lg,
-      paddingVertical: SPACING.sm,
-      borderRadius: 8,
+      paddingVertical: SPACING.md,
+      borderRadius: 12,
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: colors.primary,
     },
+    
     buttonText: {
       fontSize: 16,
       fontWeight: '600',
       color: colors.white,
     },
+    
     outlineButton: {
       paddingHorizontal: SPACING.lg,
-      paddingVertical: SPACING.sm,
-      borderRadius: 8,
+      paddingVertical: SPACING.md,
+      borderRadius: 12,
       borderWidth: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      borderColor: colors.primary,
+      borderColor: colors.border,
     },
     outlineButtonText: {
       fontSize: 16,

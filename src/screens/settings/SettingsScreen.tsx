@@ -7,6 +7,7 @@ import { MyAccountItem, RegistionItem, RowBackground, SettingRowItem } from './S
 import { SpaceV } from '../../components/space/Space';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import React from 'react';
 
 const SettingsScreen: React.FC = () => {
   const { colors } = useColors();
@@ -87,7 +88,6 @@ const SettingsScreen: React.FC = () => {
         } />
 
       <SpaceV size={16} />
-
       <RowBackground
         children={
           <>
