@@ -3,27 +3,20 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import BottomTabNavigator from './BottomTabNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer, ParamListBase } from '@react-navigation/native';
 import SettingsDetails from '../screens/settings/SettingsDetails';
+import { NavigationContainer, ParamListBase } from '@react-navigation/native';
 import SettingsNotification from '../screens/settings/SettingsNotification';
+import { UserData } from '../models/user.types';
 
-interface UserPreferences {
-  theme: string;
-  language: string;
-}
-
-interface UserData {
-  name: string;
-  email: string;
-  preferences: UserPreferences;
-}
-
-// Define navigation params
 export interface RootStackParamList extends ParamListBase {
   MainTabs: undefined;
+  HomeScreen: undefined;
+  OffersScreen: undefined;
+  SettingsScreen: undefined;
   SettingsDetails: {
     userData: UserData;
   };
+
   SettingsNotification: {
     message: string;
   };
@@ -49,10 +42,26 @@ const RootNavigator = () => {
         <Stack.Screen name="MainTabs" component={BottomTabNavigator} />
         <Stack.Screen
           name="SettingsDetails"
-          component={SettingsDetails}/>
+          component={SettingsDetails}
+          options={{
+            title: 'Settings',
+            headerStyle: {
+              backgroundColor: '#6200EE',
+            },
+            headerTintColor: '#fff',
+            headerTitleAlign: 'center',
+          }} />
         <Stack.Screen
           name="SettingsNotification"
-          component={SettingsNotification} />
+          component={SettingsNotification}
+          options={{
+            title: 'Settings',
+            headerStyle: {
+              backgroundColor: '#6200EE',
+            },
+            headerTintColor: '#fff',
+            headerTitleAlign: 'center',
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

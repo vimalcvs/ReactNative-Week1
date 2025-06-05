@@ -19,15 +19,18 @@
     "@react-native-vector-icons/evil-icons": "^12.0.0",
     "@react-native-vector-icons/fontawesome6": "^12.0.0",
     "@react-navigation/bottom-tabs": "^6.5.11",
+    "@react-navigation/material-top-tabs": "^6.6.5",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "@sentry/react-native": "^6.14.0",
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-native-dotenv": "^3.4.11",
+    "react-native-pager-view": "^6.2.3",
     "react-native-safe-area-context": "^5.4.1",
     "react-native-screens": "^4.11.1",
     "react-native-svg": "^15.12.0",
+    "react-native-tab-view": "^3.5.2",
     "react-native-vector-icons": "^10.2.0"
   },
   "devDependencies": {

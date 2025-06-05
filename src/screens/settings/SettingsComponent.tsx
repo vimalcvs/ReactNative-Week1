@@ -45,7 +45,7 @@ export const MyAccountItem: React.FC<{
     title: string;
     subtitle?: string;
     onPress?: () => void;
-}> = ({ icon, title, subtitle, _onPress }) => {
+}> = ({ icon, title, subtitle, onPress }) => {
     const { colors } = useColors();
     const appStyles = useStyles();
     return (

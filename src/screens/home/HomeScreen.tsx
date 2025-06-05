@@ -12,7 +12,7 @@ const HomeScreen = () => {
   return (
     <ScrollView style={[styles.scrollContainer, { backgroundColor: colors.background }]}>
       <View style={[styles.container]}>
-        <Text style={styles.title}>Welcome Home!</Text>
+        <Text style={styles.title}>Welcome Home new</Text>
 
       </View>
     </ScrollView>
