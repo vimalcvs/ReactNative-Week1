@@ -1,11 +1,10 @@
 import React from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import {useTheme} from '../../context/ThemeContext';
-
+import { useColors } from '../../context/ThemeContext';
 import { useStyles } from '../../styles/globalStyles';
 
 const AlertCustomComponent = () => {
-    const {colors} = useTheme();
+    const {colors} = useColors();
     const styles = useStyles();
     const onPressTwoOptionsAlert = () => {
         Alert.alert('Title', 'Two Options Alert', [

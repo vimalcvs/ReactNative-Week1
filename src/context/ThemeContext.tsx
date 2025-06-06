@@ -122,12 +122,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
 
     // UI Element colors
-    card: isDarkMode ? '#111111' : '#FFFFFF',
-    border: isDarkMode ? '#2C2C2E' : '#E0E0E0',
+    card: isDarkMode ? '#111111' : '#Fafafa',
+    border: isDarkMode ? '#2C2C2E' : '#fcfcfc',
     divider: isDarkMode ? '#38383A' : '#C6C6C8',
     input: isDarkMode ? '#2C2C2E' : '#FFFFFF',
     placeholder: isDarkMode ? '#636366' : '#C7C7CD',
-    shadow: isDarkMode ? '#2C2C2E' : '#00000079',
+    shadow: isDarkMode ? '#2C2C2E' : '#00000025',
     highlight: isDarkMode ? '#3A3A3C' : '#E5E5EA',
     overlay: isDarkMode ? '#00000080' : '#cfcfcf50',
     muted: isDarkMode ? '#48484A' : '#D1D1D6',

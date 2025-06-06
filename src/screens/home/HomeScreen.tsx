@@ -5,18 +5,32 @@ import {
 } from 'react-native';
 import { useStyles } from '../../styles/globalStyles';
 import { useColors } from '../../context/ThemeContext';
- 
+import { SpaceV } from '../../components/space/Space';
+import LinearGradient from 'react-native-linear-gradient';
+import { StatusBar } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { BackgroundGradient } from '../../components/background/Background';
+
+
+
 const HomeScreen = () => {
   const { colors } = useColors();
-  const styles = useStyles();
+  const appStyles = useStyles();
   return (
-    <ScrollView style={[styles.scrollContainer, { backgroundColor: colors.background }]}>
-      <View style={[styles.container]}>
-        <Text style={styles.title}>Welcome Home new</Text>
+    <BackgroundGradient>
+      <ScrollView style={[appStyles.scrollContainer]}>
+        <SpaceV size={50} />
 
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </BackgroundGradient>
   );
-};
 
+};
 export default HomeScreen;
+
+
+
+
+
+

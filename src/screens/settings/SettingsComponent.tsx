@@ -17,7 +17,11 @@ export const RegistionItem: React.FC<{
         <TouchableOpacity
             style={[
                 styles.settingItemContainer,
-                { backgroundColor: colors.card, shadowColor: colors.shadow },
+                {
+                    backgroundColor: colors.card,
+                    shadowColor: colors.shadow,
+                    borderColor: colors.border,
+                },
             ]}
             onPress={onPress}
             activeOpacity={0.7}>
@@ -52,7 +56,12 @@ export const MyAccountItem: React.FC<{
         <View
             style={[
                 styles.myAccountItemContainer,
-                { backgroundColor: colors.card, shadowColor: colors.shadow },
+                {
+                    backgroundColor: colors.card,
+                    shadowColor: colors.shadow,
+                    borderColor: colors.border,
+
+                },
             ]}>
             <View style={[styles.rowMyAccountContainer, { backgroundColor: colors.overlay }]}>
                 <Icon
@@ -81,7 +90,11 @@ export const RowBackground: React.FC<{
         <View
             style={[
                 styles.myAccountItemContainer,
-                { backgroundColor: colors.card, shadowColor: colors.shadow },
+                {
+                    backgroundColor: colors.card,
+                    shadowColor: colors.shadow,
+                    borderColor: colors.border,
+                },
             ]}>
             <View style={styles.columnContainer}>
                 {children}
@@ -116,10 +129,14 @@ const styles = StyleSheet.create({
     settingItemContainer: {
         flex: 1,
         borderRadius: 100,
-        shadowOffset: { width: 1, height: 1 },
+        elevation: 2,
+        borderWidth: 2.5,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
         shadowOpacity: 0.25,
         shadowRadius: 1.84,
-        elevation: 5,
     },
     iconProfile: {
         alignSelf: 'center',
@@ -158,10 +175,14 @@ const styles = StyleSheet.create({
     myAccountItemContainer: {
         flex: 1,
         borderRadius: 16,
-        shadowOffset: { width: 0, height: 0 },
-        shadowOpacity: 0.2,
-        shadowRadius: 4,
-        elevation: 4,
+        elevation: 2,
+        borderWidth: 2.5,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 1.84,
     },
 
 

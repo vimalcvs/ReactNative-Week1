@@ -39,23 +39,21 @@ const OffersScreen: React.FC = () => {
           </View>
         )}
 
-{comments.length > 0 && (
-        <FlatList
-          data={comments}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => <CommentItem item={item} />}
-          contentContainerStyle={appStyles.listContainer}
-
-          refreshControl={
-            <RefreshControl refreshing={loading} onRefresh={refetch} />
-          }
-        />
+        {comments.length > 0 && (
+          <FlatList
+            data={comments}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => <CommentItem item={item} />}
+            contentContainerStyle={appStyles.listContainer}
+            refreshControl={
+              <RefreshControl refreshing={loading} onRefresh={refetch} />
+            }
+          />
         )}
-
       </View>
     </SafeAreaView>
   );
 };
 
- 
+
 export default OffersScreen;

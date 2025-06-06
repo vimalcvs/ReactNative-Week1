@@ -8,6 +8,7 @@ import { SpaceV } from '../../components/space/Space';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+import { BackgroundGradient } from '../../components/background/Background';
 
 const SettingsScreen: React.FC = () => {
   const { colors } = useColors();
@@ -19,10 +20,11 @@ const SettingsScreen: React.FC = () => {
   }
 
   return (
+    <BackgroundGradient>
     <ScrollView
-      style={[appStyles.scrollContainer, { backgroundColor: colors.background }]}
+      style={[appStyles.scrollContainer]}
       showsVerticalScrollIndicator={false}>
-      <SpaceV size={32} />
+      <SpaceV size={50} />
       <RegistionItem
         icon="person"
         title="Register/Sign In"
@@ -106,6 +108,7 @@ const SettingsScreen: React.FC = () => {
 
       <SpaceV size={100} />
     </ScrollView>
+    </BackgroundGradient>
   );
 };
 

@@ -8,20 +8,17 @@ export const useStyles = () => {
   return StyleSheet.create({
 
     listContainer: {
-      paddingHorizontal: SPACING.md,
-      backgroundColor: colors.background,
+      paddingHorizontal: SPACING.md, 
       flexGrow: 1,
     },
     // Container styles
     container: {
-      flex: 1,
-      backgroundColor: colors.background,
+      flex: 1, 
     },
     centerContainer: {
       flex: 1,
       justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: colors.background,
+      alignItems: 'center', 
     },
 
     loadingContainer: {
@@ -30,8 +27,8 @@ export const useStyles = () => {
       alignItems: 'center',
       height: 90,
       width: 90,
-      borderRadius: 22,
-      backgroundColor:  colors.background,
+      borderRadius: 22, 
+      backgroundColor: colors.background,
       shadowColor: colors.shadow,
       shadowOffset: {
         width: 0,
@@ -44,16 +41,14 @@ export const useStyles = () => {
     errorContainer: {
       position: 'absolute',
       justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: colors.background,
+      alignItems: 'center', 
     },
 
 
     scrollContainer: {
       flexGrow: 1,
       paddingVertical: SPACING.xs,
-      paddingHorizontal: SPACING.md,
-      backgroundColor: colors.background,
+      paddingHorizontal: SPACING.md, 
     },
  
     // Text styles
@@ -134,9 +129,11 @@ export const useStyles = () => {
     // Card styles
     card: {
       padding: SPACING.md,
-      borderRadius: 12,
+      borderRadius: 16,
       marginBottom: SPACING.md,
-      elevation: 5,
+      elevation: 2,
+      borderColor: colors.border,
+      borderWidth: 2.5,
       backgroundColor: colors.card,
       shadowColor: colors.shadow,
       shadowOffset: {
@@ -144,7 +141,7 @@ export const useStyles = () => {
         height: 2,
       },
       shadowOpacity: 0.25,
-      shadowRadius: 3.84,
+      shadowRadius: 1.84,
     },
     cardTitle: {
       fontSize: 18,

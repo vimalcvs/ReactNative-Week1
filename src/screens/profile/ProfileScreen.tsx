@@ -7,24 +7,27 @@ import { useStyles } from '../../styles/globalStyles';
 import { InputField } from '../../components/textinput/TextInput';
 import { SpaceV } from '../../components/space/Space';
 import { useState } from 'react';
+import { BackgroundGradient } from '../../components/background/Background';
 const ProfileScreen = () => {
   const { colors } = useColors();
-  const styles = useStyles();
-
+  const appStyles = useStyles();
   const [name, setName] = useState('');
-
   return (
-    <ScrollView style={[styles.scrollContainer, { backgroundColor: colors.background }]}>
-      <View style={[styles.container]}>
-        <SpaceV size={32} />
-        <InputField
-          placeholder="Name"
-          keyboardType="default"
-          onChangeText={setName}
-          value={name}
-          label="Enter your name"/>
-      </View>
-    </ScrollView>
+    <BackgroundGradient>
+      <ScrollView
+        style={[appStyles.scrollContainer]}
+        showsVerticalScrollIndicator={false}>
+        <View style={[appStyles.container]}>
+          <SpaceV size={50} />
+          <InputField
+            placeholder="Name"
+            keyboardType="default"
+            onChangeText={setName}
+            value={name}
+            label="Enter your name" />
+        </View>
+      </ScrollView>
+    </BackgroundGradient>
   );
 };
 
