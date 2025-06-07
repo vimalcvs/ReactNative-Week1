@@ -6,12 +6,8 @@ import {
 import { useStyles } from '../../styles/globalStyles';
 import { useColors } from '../../context/ThemeContext';
 import { SpaceV } from '../../components/space/Space';
-import LinearGradient from 'react-native-linear-gradient';
-import { StatusBar } from 'react-native';
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React from 'react'; 
 import { BackgroundGradient } from '../../components/background/Background';
-
 
 
 const HomeScreen = () => {
