@@ -8,10 +8,12 @@ import { InputField } from '../../components/textinput/TextInput';
 import { SpaceV } from '../../components/space/Space';
 import { useState } from 'react';
 import { BackgroundGradient } from '../../components/background/Background';
+
 const ProfileScreen = () => {
-  const { colors } = useColors();
+
   const appStyles = useStyles();
   const [name, setName] = useState('');
+  
   return (
     <BackgroundGradient>
       <ScrollView

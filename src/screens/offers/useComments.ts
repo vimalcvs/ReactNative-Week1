@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Notification, NotificationApiResponse } from '../../models/types';
+import { getApiUrl, API_CONFIG } from '../../config/api';
 
 interface UseNotificationsResult {
   notifications: Notification[];
@@ -19,7 +20,7 @@ export const useNotifications = (): UseNotificationsResult => {
       setError(null);
 
       const response = await fetch(
-        'https://www.technovimal.in/apps/fast-english/api/getNotification/?api_key=d2b078b4-b1e8-4348-87f2-31bf58c8fc5b'
+        getApiUrl(`/api/getNotification/?api_key=${API_CONFIG.API_KEY}`)
       );
 
       if (!response.ok) {

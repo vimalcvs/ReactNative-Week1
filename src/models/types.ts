@@ -21,3 +21,15 @@ export interface Notification {
     data: Notification[];
   }
   
+
+
+  export interface Day {
+    listDay: string;
+    listId: string;
+    listTime: string;
+  }
+  
+  export interface Week {
+    weeksList: string;
+    daysList: Day[];
+  }

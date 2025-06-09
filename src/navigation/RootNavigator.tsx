@@ -7,6 +7,8 @@ import SettingsDetails from '../screens/settings/SettingsDetails';
 import { NavigationContainer, ParamListBase } from '@react-navigation/native';
 import SettingsNotification from '../screens/settings/SettingsNotification';
 import { UserData } from '../models/user.types';
+import NotificationDetails from '../screens/offers/NotificationDetail';
+import { Notification } from '../models/types';
 
 export interface RootStackParamList extends ParamListBase {
   MainTabs: undefined;
@@ -19,6 +21,10 @@ export interface RootStackParamList extends ParamListBase {
 
   SettingsNotification: {
     message: string;
+  };
+
+  NotificationDetails: {
+    item: Notification;
   };
 }
 
@@ -40,30 +46,9 @@ const RootNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="MainTabs" component={BottomTabNavigator} />
-        <Stack.Screen
-          name="SettingsDetails"
-          component={SettingsDetails}
-          options={{
-            title: 'Settings',
-            headerStyle: {
-              backgroundColor: '#6200EE',
-            },
-            headerTintColor: '#fff',
-            headerTitleAlign: 'center',
-          }}
-        />
-        <Stack.Screen
-          name="SettingsNotification"
-          component={SettingsNotification}
-          options={{
-            title: 'Settings',
-            headerStyle: {
-              backgroundColor: '#6200EE',
-            },
-            headerTintColor: '#fff',
-            headerTitleAlign: 'center',
-          }}
-        />
+        <Stack.Screen name="SettingsDetails" component={SettingsDetails} />
+        <Stack.Screen name="SettingsNotification" component={SettingsNotification} />
+        <Stack.Screen name="NotificationDetails" component={NotificationDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

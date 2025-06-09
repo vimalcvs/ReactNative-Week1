@@ -59,40 +59,47 @@ export const useStyles = () => {
       marginBottom: SPACING.sm,
       textAlign: 'center',
       color: colors.textPrimary,
+      fontFamily: 'Sora',
     },
     subtitle: {
       fontSize: 16,
       marginBottom: SPACING.lg,
       textAlign: 'center',
       color: colors.textSecondary,
+      fontFamily: 'Sora',
     },
     heading: {
       fontSize: 24,
       fontWeight: 'bold',
       color: colors.textPrimary,
+      fontFamily: 'Sora',
     },
     bodyText: {
       fontSize: 16,
       lineHeight: 24,
       color: colors.textPrimary,
+      fontFamily: 'Sora',
     },
     caption: {
       fontSize: 14,
       opacity: 0.7,
       color: colors.textSecondary,
+      fontFamily: 'Sora',
     },
     text: {
       fontSize: 16,
       marginBottom: SPACING.sm,
       color: colors.textPrimary,
+      fontFamily: 'Sora',
     },
     label: {
       fontSize: 14,
       marginBottom: SPACING.xs,
+      fontFamily: 'Sora',
       color: colors.textPrimary,
     },
     labelContainer: {
-      marginHorizontal: 6,
+      marginHorizontal: 6, 
       marginVertical: 6,
     },
 
@@ -109,6 +116,7 @@ export const useStyles = () => {
     buttonText: {
       fontSize: 16,
       fontWeight: '600',
+      fontFamily: 'Sora',
       color: colors.white,
     },
 
@@ -124,6 +132,7 @@ export const useStyles = () => {
     outlineButtonText: {
       fontSize: 16,
       fontWeight: '600',
+      fontFamily: 'Sora',
       color: colors.primary,
     },
 
@@ -148,11 +157,13 @@ export const useStyles = () => {
     cardTitle: {
       fontSize: 18,
       fontWeight: 'bold',
+      fontFamily: 'Sora',
       marginBottom: SPACING.xs,
       color: colors.textPrimary,
     },
     cardText: {
       fontSize: 14,
+      fontFamily: 'Sora',
       color: colors.textSecondary,
     },
 
@@ -164,6 +175,7 @@ export const useStyles = () => {
       paddingHorizontal: SPACING.md,
       marginBottom: SPACING.md,
       fontSize: 16,
+      fontFamily: 'Sora',
       backgroundColor: colors.input,
       borderColor: colors.border,
       color: colors.textPrimary,
@@ -175,12 +187,14 @@ export const useStyles = () => {
     errorText: {
       color: colors.error,
       fontSize: 12,
+      fontFamily: 'Sora',
       marginTop: -SPACING.sm,
       marginBottom: SPACING.sm,
       marginLeft: SPACING.xs,
     },
     inputLabel: {
       fontSize: 16,
+      fontFamily: 'Sora',
       marginBottom: SPACING.xs,
       fontWeight: '500',
       color: colors.textPrimary,
@@ -214,6 +228,7 @@ export const useStyles = () => {
     },
     listItemText: {
       fontSize: 16,
+      fontFamily: 'Sora',
       color: colors.textPrimary,
     },
 
