@@ -1,6 +1,8 @@
 {
     "version": "0.2.0",
     "configurations": [
+        {"name":"Run Android Hermes","request":"launch","type":"reactnativedirect","cwd":"${workspaceFolder}","enableDebug":false,"platform":"android"},
+
         {
             "command": "npm start",
             "name": "Run npm start",

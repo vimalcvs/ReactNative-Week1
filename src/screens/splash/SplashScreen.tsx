@@ -5,17 +5,17 @@ import { useStyles } from '../../styles/globalStyles';
 import { BackgroundGradient } from '../../components/background/Background';
 
 const SplashScreen = () => {
-    const { colors } = useColors();
-    const styles = useStyles();
-    return (
-        <BackgroundGradient>
-        <View style={[styles.container, { backgroundColor: colors.background }]}>
-            <View style={styles.centerContainer}>
-                <Text style={[styles.title, { color: colors.facebook }]}>Welcome</Text>
-            </View>
+  const { colors } = useColors();
+  const styles = useStyles();
+  return (
+    <BackgroundGradient>
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <View style={styles.centerContainer}>
+          <Text style={[styles.title, { color: colors.facebook }]}>Welcome</Text>
         </View>
-        </BackgroundGradient>
-    );
+      </View>
+    </BackgroundGradient>
+  );
 };
 
 export default SplashScreen;

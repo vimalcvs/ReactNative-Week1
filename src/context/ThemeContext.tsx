@@ -89,7 +89,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     textTertiary: isDarkMode ? '#6E6E6E' : '#8E8E93',
     textMuted: isDarkMode ? '#A1A1A1' : '#6E6E6E',
 
-
     tabBar: isDarkMode ? '#1212129f' : '#FFFFFF',
     tabBarActive: '#007AFF',
     tabBarInactive: '#8E8E93',
@@ -112,14 +111,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     dangerLight: '#FF6B60',
     info: '#5AC8FA',
 
-
     orange: '#FFA500',
     blue: '#5AC8FA',
     purple: '#800080',
     green: '#34C759',
     yellow: '#FF9500',
     red: '#FF3B30',
-
 
     // UI Element colors
     card: isDarkMode ? '#111111' : '#Fafafa',
@@ -142,7 +139,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     white: '#FFFFFF',
     black: '#000000',
   };
-
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme, colors }}>

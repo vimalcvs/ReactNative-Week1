@@ -1,6 +1,4 @@
-import {
-  ScrollView,
-} from 'react-native';
+import { ScrollView } from 'react-native';
 import { useColors } from '../../context/ThemeContext';
 import { useStyles } from '../../styles/globalStyles';
 import { MyAccountItem, RegistionItem, RowBackground, SettingRowItem } from './SettingsComponent';
@@ -17,26 +15,26 @@ const SettingsScreen: React.FC = () => {
 
   const handleRegisterPress = () => {
     console.log('Register pressed');
-  }
+  };
 
   return (
     <BackgroundGradient>
-      <ScrollView
-        style={[appStyles.scrollContainer]}
-        showsVerticalScrollIndicator={false}>
+      <ScrollView style={[appStyles.scrollContainer]} showsVerticalScrollIndicator={false}>
         <SpaceV size={50} />
         <RegistionItem
           icon="person"
           title="Register/Sign In"
           subtitle="19 virtual devices"
-          onPress={handleRegisterPress} />
+          onPress={handleRegisterPress}
+        />
         <SpaceV size={16} />
 
         <MyAccountItem
           icon="person"
           title="Register/Sign In"
           subtitle="19 virtual devices"
-          onPress={handleRegisterPress} />
+          onPress={handleRegisterPress}
+        />
 
         <SpaceV size={16} />
 
@@ -47,11 +45,12 @@ const SettingsScreen: React.FC = () => {
                 title="Notifications"
                 onPress={() => {
                   navigation.navigate('SettingsNotification', {
-                    message: 'Welcome to notifications'
+                    message: 'Welcome to notifications',
                   });
                 }}
                 icon="notifications"
-                iconBackground={colors.blue} />
+                iconBackground={colors.blue}
+              />
               <SettingRowItem
                 title="Settings"
                 onPress={() => {
@@ -61,20 +60,23 @@ const SettingsScreen: React.FC = () => {
                       email: 'john@example.com',
                       preferences: {
                         theme: 'dark',
-                        language: 'en'
-                      }
-                    }
+                        language: 'en',
+                      },
+                    },
                   });
                 }}
                 icon="settings"
-                iconBackground={colors.yellow} />
+                iconBackground={colors.yellow}
+              />
               <SettingRowItem
                 title="Save to cloud"
-                onPress={() => { }}
+                onPress={() => {}}
                 icon="cloud"
-                iconBackground={colors.green} />
+                iconBackground={colors.green}
+              />
             </>
-          } />
+          }
+        />
 
         <SpaceV size={16} />
 
@@ -83,11 +85,13 @@ const SettingsScreen: React.FC = () => {
             <>
               <SettingRowItem
                 title="My goals"
-                onPress={() => { }}
+                onPress={() => {}}
                 icon="footsteps"
-                iconBackground={colors.orange} />
+                iconBackground={colors.orange}
+              />
             </>
-          } />
+          }
+        />
 
         <SpaceV size={16} />
         <RowBackground
@@ -95,16 +99,19 @@ const SettingsScreen: React.FC = () => {
             <>
               <SettingRowItem
                 title="Help and feedback"
-                onPress={() => { }}
+                onPress={() => {}}
                 icon="help"
-                iconBackground={colors.blue} />
+                iconBackground={colors.blue}
+              />
               <SettingRowItem
                 title="Like this app?"
-                onPress={() => { }}
+                onPress={() => {}}
                 icon="star"
-                iconBackground={colors.red} />
+                iconBackground={colors.red}
+              />
             </>
-          } />
+          }
+        />
 
         <SpaceV size={100} />
       </ScrollView>
@@ -113,4 +120,3 @@ const SettingsScreen: React.FC = () => {
 };
 
 export default SettingsScreen;
-

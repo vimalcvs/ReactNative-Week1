@@ -30,7 +30,17 @@ const ICON_MAP = {
   },
 } as const;
 
-const TabBarIcon = ({ route, color, size, focused }: { route: { name: string }, color: string, size: number, focused: boolean }) => {
+const TabBarIcon = ({
+  route,
+  color,
+  size,
+  focused,
+}: {
+  route: { name: string };
+  color: string;
+  size: number;
+  focused: boolean;
+}) => {
   const iconName = focused
     ? ICON_MAP[route.name as keyof typeof ICON_MAP].filled
     : ICON_MAP[route.name as keyof typeof ICON_MAP].outline;
@@ -41,9 +51,8 @@ const TabBarButton = (props: any) => (
   <PlatformPressable {...props} android_ripple={{ color: 'transparent' }} />
 );
 
-const createTabBarIcon = (route: { name: string }) => (props: any) => (
-  <TabBarIcon route={route} {...props} />
-);
+const createTabBarIcon = (route: { name: string }) => (props: any) =>
+  <TabBarIcon route={route} {...props} />;
 
 const BottomTabNavigator = () => {
   const { colors } = useColors();
@@ -62,7 +71,8 @@ const BottomTabNavigator = () => {
           borderTopWidth: 0.5,
           height: 80,
         },
-      })}>
+      })}
+    >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Offers" component={OffersScreen} />

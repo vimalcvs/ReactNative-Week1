@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Notification, NotificationApiResponse } from '../../models/types';
 
-
 interface UseNotificationsResult {
   notifications: Notification[];
   loading: boolean;

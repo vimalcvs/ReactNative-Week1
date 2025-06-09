@@ -30,15 +30,14 @@ const SettingsNotification: React.FC<Props> = () => {
   return (
     <ScrollView
       style={[appStyles.scrollContainer, { backgroundColor: colors.background }]}
-      showsVerticalScrollIndicator={false}>
+      showsVerticalScrollIndicator={false}
+    >
       <SpaceV size={20} />
-      <ButtonPrimary title='Show Alert' onPress={() => { }} />
+      <ButtonPrimary title="Show Alert" onPress={() => {}} />
       <SpaceV size={20} />
-      <ButtonOutline title='Show Alert' onPress={() => { }} />
+      <ButtonOutline title="Show Alert" onPress={() => {}} />
     </ScrollView>
   );
 };
 
 export default SettingsNotification;
-
-

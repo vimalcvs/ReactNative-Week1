@@ -50,7 +50,8 @@ const RootNavigator = () => {
             },
             headerTintColor: '#fff',
             headerTitleAlign: 'center',
-          }} />
+          }}
+        />
         <Stack.Screen
           name="SettingsNotification"
           component={SettingsNotification}
@@ -61,7 +62,8 @@ const RootNavigator = () => {
             },
             headerTintColor: '#fff',
             headerTitleAlign: 'center',
-          }} />
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

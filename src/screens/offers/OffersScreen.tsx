@@ -21,11 +21,12 @@ const OffersScreen: React.FC = () => {
 
   return (
     <BackgroundGradient>
-
       <SafeAreaView style={appStyles.container}>
         <SpaceV size={50} />
         <View style={[appStyles.centerContainer, { flex: 1 }]}>
-          <Text style={[appStyles.heading, { textAlign: 'left' }, { marginStart: 16 }]}>Offers</Text>
+          <Text style={[appStyles.heading, { textAlign: 'left' }, { marginStart: 16 }]}>
+            Offers
+          </Text>
           <SpaceV size={8} />
 
           {loading && (
@@ -43,21 +44,17 @@ const OffersScreen: React.FC = () => {
           {notifications.length > 0 && (
             <FlatList
               data={notifications}
-              keyExtractor={(item) => item.id.toString()}
+              keyExtractor={item => item.id.toString()}
               renderItem={({ item }) => <NotificationItem item={item} />}
               contentContainerStyle={appStyles.listContainer}
-              style={{ width: "100%" }}
-              refreshControl={
-                <RefreshControl refreshing={loading} onRefresh={refetch} />
-              }
+              style={{ width: '100%' }}
+              refreshControl={<RefreshControl refreshing={loading} onRefresh={refetch} />}
             />
           )}
         </View>
       </SafeAreaView>
-
     </BackgroundGradient>
   );
 };
-
 
 export default OffersScreen;
