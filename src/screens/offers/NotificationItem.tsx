@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-
-import { Comment, Notification } from '../../models/types';
+import { View, Text, Image } from 'react-native';
+import { Notification } from '../../models/types';
 import { useStyles } from '../../styles/globalStyles';
 import { useColors } from '../../context/ThemeContext';
  
