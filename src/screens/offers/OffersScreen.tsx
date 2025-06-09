@@ -4,54 +4,58 @@ import {
   Text,
   FlatList,
   ActivityIndicator,
-  StyleSheet,
   SafeAreaView,
-  StatusBar,
   RefreshControl,
 } from 'react-native';
-import { useComments } from './useComments';
-import { CommentItem } from './CommentItem';
+import { useNotifications } from './useComments';
+import { NotificationItem } from './NotificationItem';
 import { useStyles } from '../../styles/globalStyles';
 import { useColors } from '../../context/ThemeContext';
 import { SpaceV } from '../../components/space/Space';
+import { BackgroundGradient } from '../../components/background/Background';
 
 const OffersScreen: React.FC = () => {
-  const { comments, loading, error, refetch } = useComments();
+  const { notifications, loading, error, refetch } = useNotifications();
   const appStyles = useStyles();
   const { colors } = useColors();
 
   return (
-    <SafeAreaView style={appStyles.container}>
-      <SpaceV size={32} />
-      <View style={[appStyles.centerContainer, { flex: 1 }]}>
-        <Text style={[appStyles.heading, { textAlign: 'left' }, { marginStart: 16 }]}>Offers</Text>
-        <SpaceV size={8} />
+    <BackgroundGradient>
 
-        {loading && (
-          <View style={appStyles.loadingContainer}>
-            <ActivityIndicator size="large" color="#007bff" />
-          </View>
-        )}
+      <SafeAreaView style={appStyles.container}>
+        <SpaceV size={50} />
+        <View style={[appStyles.centerContainer, { flex: 1 }]}>
+          <Text style={[appStyles.heading, { textAlign: 'left' }, { marginStart: 16 }]}>Offers</Text>
+          <SpaceV size={8} />
 
-        {error && (
-          <View style={appStyles.errorContainer}>
-            <Text style={[appStyles.bodyText, { color: colors.error }]}>{error}</Text>
-          </View>
-        )}
+          {loading && (
+            <View style={appStyles.loadingContainer}>
+              <ActivityIndicator size="large" color="#007bff" />
+            </View>
+          )}
 
-        {comments.length > 0 && (
-          <FlatList
-            data={comments}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => <CommentItem item={item} />}
-            contentContainerStyle={appStyles.listContainer}
-            refreshControl={
-              <RefreshControl refreshing={loading} onRefresh={refetch} />
-            }
-          />
-        )}
-      </View>
-    </SafeAreaView>
+          {error && (
+            <View style={appStyles.errorContainer}>
+              <Text style={[appStyles.bodyText, { color: colors.error }]}>{error}</Text>
+            </View>
+          )}
+
+          {notifications.length > 0 && (
+            <FlatList
+              data={notifications}
+              keyExtractor={(item) => item.id.toString()}
+              renderItem={({ item }) => <NotificationItem item={item} />}
+              contentContainerStyle={appStyles.listContainer}
+              style={{ width: "100%" }}
+              refreshControl={
+                <RefreshControl refreshing={loading} onRefresh={refetch} />
+              }
+            />
+          )}
+        </View>
+      </SafeAreaView>
+
+    </BackgroundGradient>
   );
 };
 

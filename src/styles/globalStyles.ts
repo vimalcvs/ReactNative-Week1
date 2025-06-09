@@ -1,24 +1,25 @@
-import {StyleSheet} from 'react-native';
-import {SPACING} from './constants';
-import {useColors} from '../context/ThemeContext';
+import { StyleSheet } from 'react-native';
+import { SPACING } from './constants';
+import { useColors } from '../context/ThemeContext';
 
 export const useStyles = () => {
-  const {colors} = useColors();
+  const { colors } = useColors();
 
   return StyleSheet.create({
 
     listContainer: {
-      paddingHorizontal: SPACING.md, 
+      paddingHorizontal: SPACING.md,
       flexGrow: 1,
+      width: "100%",
     },
     // Container styles
     container: {
-      flex: 1, 
+      flex: 1,
     },
     centerContainer: {
       flex: 1,
       justifyContent: 'center',
-      alignItems: 'center', 
+      alignItems: 'center',
     },
 
     loadingContainer: {
@@ -27,7 +28,7 @@ export const useStyles = () => {
       alignItems: 'center',
       height: 90,
       width: 90,
-      borderRadius: 22, 
+      borderRadius: 22,
       backgroundColor: colors.background,
       shadowColor: colors.shadow,
       shadowOffset: {
@@ -41,16 +42,16 @@ export const useStyles = () => {
     errorContainer: {
       position: 'absolute',
       justifyContent: 'center',
-      alignItems: 'center', 
+      alignItems: 'center',
     },
 
 
     scrollContainer: {
       flexGrow: 1,
       paddingVertical: SPACING.xs,
-      paddingHorizontal: SPACING.md, 
+      paddingHorizontal: SPACING.md,
     },
- 
+
     // Text styles
     title: {
       fontSize: 28,
@@ -67,7 +68,7 @@ export const useStyles = () => {
     },
     heading: {
       fontSize: 24,
-      fontWeight: 'bold', 
+      fontWeight: 'bold',
       color: colors.textPrimary,
     },
     bodyText: {
@@ -104,13 +105,13 @@ export const useStyles = () => {
       justifyContent: 'center',
       backgroundColor: colors.primary,
     },
-    
+
     buttonText: {
       fontSize: 16,
       fontWeight: '600',
       color: colors.white,
     },
-    
+
     outlineButton: {
       paddingHorizontal: SPACING.lg,
       paddingVertical: SPACING.md,
@@ -128,6 +129,7 @@ export const useStyles = () => {
 
     // Card styles
     card: {
+    
       padding: SPACING.md,
       borderRadius: 16,
       marginBottom: SPACING.md,
@@ -151,7 +153,7 @@ export const useStyles = () => {
     },
     cardText: {
       fontSize: 14,
-        color: colors.textSecondary,
+      color: colors.textSecondary,
     },
 
     // Input styles

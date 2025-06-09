@@ -1,43 +1,49 @@
 import { useState, useEffect } from 'react';
-import { Comment } from '../../models/types';
+import { Notification, NotificationApiResponse } from '../../models/types';
 
-interface UseCommentsResult {
-  comments: Comment[];
+
+interface UseNotificationsResult {
+  notifications: Notification[];
   loading: boolean;
   error: string | null;
   refetch: () => Promise<void>;
 }
 
-export const useComments = (): UseCommentsResult => {
-  const [comments, setComments] = useState<Comment[]>([]);
+export const useNotifications = (): UseNotificationsResult => {
+  const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchComments = async () => {
+  const fetchNotifications = async () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch('https://jsonplaceholder.typicode.com/comments');
+
+      const response = await fetch(
+        'https://www.technovimal.in/apps/fast-english/api/getNotification/?api_key=d2b078b4-b1e8-4348-87f2-31bf58c8fc5b'
+      );
+
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      const data = await response.json();
-      setComments(data);
+
+      const json: NotificationApiResponse = await response.json();
+      setNotifications(json.data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load comments');
+      setError(err instanceof Error ? err.message : 'Failed to load notifications');
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchComments();
+    fetchNotifications();
   }, []);
 
   return {
-    comments,
+    notifications,
     loading,
     error,
-    refetch: fetchComments,
+    refetch: fetchNotifications,
   };
-}; 
+};

@@ -6,7 +6,7 @@ import {
 import { useStyles } from '../../styles/globalStyles';
 import { useColors } from '../../context/ThemeContext';
 import { SpaceV } from '../../components/space/Space';
-import React from 'react'; 
+import React from 'react';
 import { BackgroundGradient } from '../../components/background/Background';
 
 
