@@ -1,57 +1,29 @@
-import { View, Text, ScrollView, FlatList } from 'react-native';
-import { useStyles } from '../../styles/globalStyles';
-import { useColors } from '../../context/ThemeContext';
-import { SpaceV } from '../../components/space/Space';
+import { View, Text, SectionList } from 'react-native';
 import React from 'react';
+import { SpaceV } from '../../components/space/Space';
 import { BackgroundGradient } from '../../components/background/Background';
-import { Week } from '../../models/types';
-import { WeekItem } from './HomeComponent';
+import { DayItem, WeekItem, getChapterList } from './HomeComponent';
 
 const HomeScreen = () => {
-  const { colors } = useColors();
-  const appStyles = useStyles();
-
-  const getChapterList = (): Week[] => {
-    const totalDays = 100;
-    const daysPerWeek = 7;
-    const weeks: Week[] = [];
-    let dayCount = 1;
-
-    while (dayCount <= totalDays) {
-      const remainingDays = totalDays - dayCount + 1;
-      const daysInWeek = Math.min(daysPerWeek, remainingDays);
-
-      const week: Week = {
-        weeksList: `WEEK ${weeks.length + 1}`,
-        daysList: Array.from({ length: daysInWeek }, (_, dayIndex) => {
-          const dayNumber = dayCount + dayIndex;
-          return {
-            listDay: `Day ${dayNumber}`,
-            listId: `A${dayNumber}`,
-            listTime: `Chapter ${5 + (dayIndex % 3)} min`
-          };
-        })
-      };
-      weeks.push(week);
-      dayCount += daysInWeek;
-    }
-    return weeks;
-  };
-
   const weeksList = getChapterList();
+
 
   return (
     <BackgroundGradient>
-      <View style={{ flex: 1 }}>
+      
         <SpaceV size={50} />
-        <FlatList
-          data={weeksList}
-          renderItem={({ item }) => <WeekItem item={item} />}
-          keyExtractor={(week) => week.weeksList}
+        <SectionList
+          sections={weeksList.map(week => ({
+            title: week.weeksList,
+            data: week.daysList,
+          }))}
+          keyExtractor={(item, index) => item.listId + index}
           contentContainerStyle={{ paddingHorizontal: 16 }}
-          showsVerticalScrollIndicator={false}
-        />
-      </View>
+          renderSectionHeader={({ section }) => (
+            <WeekItem item={{ weeksList: section.title, daysList: section.data }} />
+          )}
+          renderItem={({ item }) => <DayItem item={item} />}
+        /> 
     </BackgroundGradient>
   );
 };

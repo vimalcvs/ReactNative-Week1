@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "168058710645",
+    "project_id": "rn-test-a29db",
+    "storage_bucket": "rn-test-a29db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168058710645:android:3311e7efab1a117648e63c",
+        "android_client_info": {
+          "package_name": "com.reactnativeweek1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2cuzNbrp2v4TNhK7vNmOislwMjif1n3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

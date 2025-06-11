@@ -2,40 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Chrome",
-      "request": "launch",
-      "type": "chrome",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "Attach to Chrome",
-      "port": 9222,
+      "name": "Attach to Hermes application",
       "request": "attach",
-      "type": "chrome",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "Run Android Hermes",
-      "request": "launch",
       "type": "reactnativedirect",
-      "cwd": "${workspaceFolder}",
-      "enableDebug": false,
-      "platform": "android"
-    },
-    {
-      "name": "Debug Android Hermes",
-      "request": "launch",
-      "type": "reactnativedirect",
-      "cwd": "${workspaceFolder}",
-      "platform": "android",
-      "enableDebug": true
-    },
-    {
-      "command": "npm start",
-      "name": "Run npm start",
-      "request": "launch",
-      "type": "node-terminal"
+      "cwd": "${workspaceFolder}"
     }
   ]
 }
