@@ -4,34 +4,14 @@ import { useColors } from '../../context/ThemeContext';
 import { useStyles } from '../../styles/globalStyles';
 import { BackgroundGradient } from '../../components/background/Background';
 import { useEffect } from 'react';
-import { requestAndroidNotificationPermission, requestIOSNotificationPermission } from '../../utils/Permissions';
+import { requestAndroidNotificationPermission, requestIOSNotificationPermission } from '../../utils/NotificationPermission';
 import { Platform, Alert } from 'react-native';
+import messaging from '@react-native-firebase/messaging';
 
 const SplashScreen = () => {
   const { colors } = useColors();
   const styles = useStyles();
 
-    useEffect(() => {
-      const requestNotificationPermissions = async () => {
-        try {
-          if (Platform.OS === 'android') {
-            const granted = await requestAndroidNotificationPermission();
-            if (!granted) {
-              Alert.alert('Notification Permission', 'Notifications are disabled. Please enable them in settings.');
-            }
-          } else if (Platform.OS === 'ios') {
-            const granted = await requestIOSNotificationPermission();
-            if (!granted) {
-              Alert.alert('Notification Permission', 'Notifications are disabled. Please enable them in settings.');
-            }
-          }
-        } catch (error) {
-          console.error('Error requesting notification permissions:', error);
-        }
-      };
-  
-      requestNotificationPermissions();
-    }, []);
    
   return (
     <BackgroundGradient>
@@ -45,3 +25,4 @@ const SplashScreen = () => {
 };
 
 export default SplashScreen;
+
