@@ -6,11 +6,8 @@ import { DayItem, WeekItem, getChapterList } from './HomeComponent';
 
 const HomeScreen = () => {
   const weeksList = getChapterList();
-
-
   return (
     <BackgroundGradient>
-      
         <SpaceV size={50} />
         <SectionList
           sections={weeksList.map(week => ({
